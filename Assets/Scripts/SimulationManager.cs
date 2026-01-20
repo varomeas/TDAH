@@ -30,9 +30,9 @@ public class SimulationManager : MonoBehaviour
         yield return new WaitForSeconds(15f); //Attendre 10secondes
 
         // Etape 3 - Télé qui monte en volume + fourchette qui va tomber
-        //scriptTelevion.LancerPicSonore();
+        scriptTelevision.StartAudioPic();
         //faire tomber la fourchette
-        //yield return new WaitForSeconds(5f); //Attendre 10secondes
+        yield return new WaitForSeconds(5f); //Attendre 10secondes
 
         // Etape 4 - La machine à laver s'emballe
         scriptMachine.ActiverPerturbation(true);
