@@ -26,8 +26,8 @@ public class SimulationManager : MonoBehaviour
         yield return new WaitForSeconds(10f); //Attendre 10secondes
 
         // Etape 2 - Lumire qui clignote
-        /*scriptLumiere.DemarrerClignotement();
-        yield return new WaitForSeconds(15f);*/ //Attendre 10secondes
+        scriptLumiere.StartFlashing();
+        yield return new WaitForSeconds(15f); //Attendre 10secondes
 
         // Etape 3 - Télé qui monte en volume + fourchette qui va tomber
         //scriptTelevion.LancerPicSonore();

@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
 public class MachineLaver : MonoBehaviour
 {
     public Rigidbody assietteRB;
-    public float tremblement = 0.5f;
+    public float tremblement = 2.5f;
 
     public HapticImpulsePlayer leftController;
     public HapticImpulsePlayer rightController;
