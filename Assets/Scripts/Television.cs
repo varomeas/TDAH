@@ -7,7 +7,7 @@ public class Television : MonoBehaviour
     public AudioSource audiosource;
     public ForcedDrop forcedDropScript;
 
-    public float volumeMax = 1.0f;
+    public float volumeMax = 5f;
     public float dureeMonteeVolume = 2.0f;
 
     private float volumeInitial;
@@ -32,7 +32,7 @@ public class Television : MonoBehaviour
         while (temps < dureeMonteeVolume)
         {
             temps += Time.deltaTime;
-            audiosource.volume = Mathf.Lerp(volumeInitial, volumeMax, temps / dureeMonteeVolume);
+            audiosource.volume = volumeInitial*volumeMax;
             yield return null;
         }
 
