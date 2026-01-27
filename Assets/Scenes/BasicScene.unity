@@ -977,8 +977,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
+  m_sharedMaterial: {fileID: 8034269906963702213, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1835,10 +1835,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ton score de petits pois :'
+  m_text: 'Ton score de carottes:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
+  m_sharedMaterial: {fileID: 8034269906963702213, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2131,7 +2131,6 @@ GameObject:
   - component: {fileID: 236022522}
   - component: {fileID: 236022521}
   - component: {fileID: 236022520}
-  - component: {fileID: 236022519}
   m_Layer: 0
   m_Name: Machine a laver
   m_TagString: Untagged
@@ -2139,29 +2138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &236022519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236022518}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ad9bc8724068134f9eb1e96602f8096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  assietteRB: {fileID: 0}
-  tremblement: 0.3
-  audio: {fileID: 1982980276}
-  machineAnimator: {fileID: 1373164950}
-  mainDroite: {fileID: 0}
-  tremblementMain: 0.05
-  volumeMax: 0.8
-  dureeFadeIn: 5
-  vibrationMax: 0.9
-  leftController: {fileID: 2110077477}
-  rightController: {fileID: 1291898043}
 --- !u!65 &236022520
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2910,8 +2886,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Ton score de petits pois :'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
+  m_sharedMaterial: {fileID: 8034269906963702213, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3565,7 +3541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f21a0cb2993f564091fd1c48401c13a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptMachine: {fileID: 236022519}
+  scriptMachine: {fileID: 1373164951}
   scriptTelevision: {fileID: 92455914}
   scriptLumiere: {fileID: 741556168}
   tempsRestant: 70
@@ -4138,8 +4114,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
+  m_sharedMaterial: {fileID: 8034269906963702213, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7008,8 +6984,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
+  m_sharedMaterial: {fileID: 8034269906963702213, guid: a57df11d17f5ab446a6cea6f2100938b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7859,7 +7835,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6239881831769578202, guid: df6059519b9e977468c2d06308b4263b, type: 3}
 --- !u!1 &1114124950 stripped
@@ -9517,7 +9493,7 @@ MonoBehaviour:
   tremblementMain: 0.05
   volumeMax: 50
   dureeFadeIn: 5
-  vibrationMax: 1
+  vibrationMax: 50
   leftController: {fileID: 2110077477}
   rightController: {fileID: 1291898043}
 --- !u!1 &1377997433

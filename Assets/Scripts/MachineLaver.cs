@@ -100,7 +100,7 @@ public class MachineLaver : MonoBehaviour
         Debug.Log("je vibre");
         if (controller != null && amplitude > 0.01f)
         {
-            controller.SendHapticImpulse(amplitude, Time.deltaTime);
+            controller.SendHapticImpulse(amplitude, 0.1f);
         }
     }
 
