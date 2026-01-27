@@ -14,9 +14,10 @@ public class MachineLaver : MonoBehaviour
 
     [Header("Visuals des Mains")]
     public Transform mainDroite;
+    public Transform mainGauche;
     public float tremblementMain = 0.05f;
 
-    [Header("Paramètres audio")]
+    [Header("Paramètres audio et vibration")]
     public float volumeMax = 0.8f;
     public float dureeFadeIn = 5.0f;
     public float vibrationMax = 0.5f;
@@ -26,6 +27,7 @@ public class MachineLaver : MonoBehaviour
 
     private bool isRunning = false;
     private Vector3 posInitialeDroite;
+    private Vector3 posInitialeGauche;
 
     public void ActiverPerturbation(bool state)
     {
@@ -38,9 +40,8 @@ public class MachineLaver : MonoBehaviour
         }
         else
         {
-            machineAnimator.SetBool("Tourne", false);
-            audio.Stop();
-            StopAllCoroutines();
+           FinirPerturbation();
+           StopAllCoroutines();
         }
     }
 
@@ -65,6 +66,7 @@ public class MachineLaver : MonoBehaviour
     void Start()
     {
         if (mainDroite) posInitialeDroite = mainDroite.localPosition;
+        if(mainGauche) posInitialeGauche = mainGauche.localPosition;
     }
 
     // Update is called once per frame
@@ -74,13 +76,14 @@ public class MachineLaver : MonoBehaviour
         {
             Vector3 secousse = Random.insideUnitSphere * tremblement;
             assietteRB.AddForce(secousse, ForceMode.Acceleration);
-            Debug.Log("Je runnn");
-            float intensiteActuelle = audio.volume/volumeMax;
+            
+            float intensiteActuelle = (volumeMax > 0) ? audio.volume / volumeMax : 0;
             float vibrationForce = intensiteActuelle*vibrationMax;
             VibrerManette(leftController, vibrationForce);
             VibrerManette(rightController, vibrationForce);
 
             TremblerMain(mainDroite, posInitialeDroite, intensiteActuelle);
+            TremblerMain(mainGauche, posInitialeGauche, intensiteActuelle);
             
         }
         
@@ -97,11 +100,30 @@ public class MachineLaver : MonoBehaviour
 
     void VibrerManette(HapticImpulsePlayer controller, float amplitude)
     {
-        Debug.Log("je vibre");
+        
         if (controller != null && amplitude > 0.01f)
         {
             controller.SendHapticImpulse(amplitude, 0.1f);
         }
+    }
+
+    public void FinirPerturbation()
+    {
+        isRunning = false;
+        machineAnimator.SetBool("Tourne", false);
+        
+        if (audio != null) audio.Stop();
+        
+        // IMPORTANT : On remet les mains à leur place exacte
+        ResetMains();
+        
+        Debug.Log("Perturbation terminée et mains réinitialisées");
+    }
+
+    private void ResetMains()
+    {
+        if (mainDroite) mainDroite.localPosition = posInitialeDroite;
+        if (mainGauche) mainGauche.localPosition = posInitialeGauche;
     }
 
 }
