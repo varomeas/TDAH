@@ -7,8 +7,8 @@ public class Television : MonoBehaviour
     public AudioSource audiosource;
     public ForcedDrop forcedDropScript;
 
-    public float volumeMax = 5f;
-    public float dureeMonteeVolume = 2.0f;
+    public float volumeMax = 100f;
+    public float dureeMonteeVolume = 5.0f;
 
     private float volumeInitial;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,11 +28,12 @@ public class Television : MonoBehaviour
     IEnumerator RoutineVolume()
     {
         float temps = 0;
-
+        Debug.Log("début montée du son, volume de départ : " +  volumeInitial);
         while (temps < dureeMonteeVolume)
         {
             temps += Time.deltaTime;
-            audiosource.volume = volumeInitial*volumeMax;
+            audiosource.volume = Mathf.Lerp(volumeInitial, volumeMax, temps / dureeMonteeVolume);
+            Debug.Log("Volume tv en cours : " + audiosource.volume);
             yield return null;
         }
 
@@ -44,7 +45,7 @@ public class Television : MonoBehaviour
         Debug.Log("Son trop fort, la fourchette tombe");
 
         yield return new WaitForSeconds(3f);
-        audiosource.volume = volumeInitial;
+        //audiosource.volume = volumeInitial;
     }
 
     // Update is called once per frame

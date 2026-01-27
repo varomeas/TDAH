@@ -21,18 +21,18 @@ public class SimulationManager : MonoBehaviour
 
     IEnumerator SequenceDuRepas()
     {
-        // Etape 1 - Debut, plutot calme
+        /*// Etape 1 - Debut, plutot calme
         Debug.Log("Début : l'enfant doit commencer à trier.");
-        yield return new WaitForSeconds(10f); //Attendre 10secondes
+        yield return new WaitForSeconds(20f); //Attendre 10secondes*/
 
         // Etape 2 - Lumire qui clignote
         scriptLumiere.StartFlashing();
-        yield return new WaitForSeconds(15f); //Attendre 10secondes
+        yield return new WaitForSeconds(20f); //Attendre 10secondes
 
         // Etape 3 - Télé qui monte en volume + fourchette qui va tomber
         scriptTelevision.StartAudioPic();
         //faire tomber la fourchette
-        yield return new WaitForSeconds(5f); //Attendre 10secondes
+        yield return new WaitForSeconds(20f); //Attendre 10secondes
 
         // Etape 4 - La machine à laver s'emballe
         scriptMachine.ActiverPerturbation(true);
@@ -70,5 +70,6 @@ public class SimulationManager : MonoBehaviour
     void FinirPartie()
     {
         Debug.Log("C'est la fin des petits poids............................");
+        
     }
 }
