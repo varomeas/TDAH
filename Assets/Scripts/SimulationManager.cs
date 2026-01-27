@@ -21,9 +21,9 @@ public class SimulationManager : MonoBehaviour
 
     IEnumerator SequenceDuRepas()
     {
-        /*// Etape 1 - Debut, plutot calme
+        // Etape 1 - Debut, plutot calme
         Debug.Log("Début : l'enfant doit commencer à trier.");
-        yield return new WaitForSeconds(20f); //Attendre 10secondes*/
+        yield return new WaitForSeconds(20f); //Attendre 10secondes
 
         // Etape 2 - Lumire qui clignote
         scriptLumiere.StartFlashing();

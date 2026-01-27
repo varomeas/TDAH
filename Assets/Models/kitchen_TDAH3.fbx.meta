@@ -42,6 +42,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BlackWood.001
+    second: {fileID: 2100000, guid: 9d9920a14b5d3ca4f81155008273c9f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Bocaux
     second: {fileID: 2100000, guid: 6c4c90bed222bc741afb89f2f7ef0eee, type: 2}
   - first:
@@ -192,6 +197,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: GlassWindow.001
+    second: {fileID: 2100000, guid: 9a8f5e5ca6b6b3f41b72b013e17953a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Grey
     second: {fileID: 2100000, guid: b9e71ef34cdb47343802dde6b326526c, type: 2}
   - first:
@@ -237,6 +247,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Metal.002
+    second: {fileID: 2100000, guid: e3fa4d0f5c5b31242be76678cfbd7c70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal.003
+    second: {fileID: 2100000, guid: 8450c341fd44a2d4092711f7cf2c0eef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Metal2
     second: {fileID: 2100000, guid: 67690456cae6bb844a99ba53e441fdc9, type: 2}
   - first:
@@ -247,18 +267,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MetalGold
-    second: {fileID: 2100000, guid: 092c5e03ded0d4d43af03dbd906a9f94, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: MetalMiniTable
     second: {fileID: 2100000, guid: 9d8bd83bad5e4d64bb5fd04d4ca76f30, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: MetalWindow
-    second: {fileID: 2100000, guid: acd6c64132427ae4d92a6102fee8e31c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -323,22 +333,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: TV
-    second: {fileID: 2100000, guid: 82bb3af38ed24be47ada7ce2fb1fda8d, type: 2}
+    second: {fileID: 2100000, guid: 088038160c8597a48a5fd5a1623cc594, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: TVButton
-    second: {fileID: 2100000, guid: 982287a301674b747a73479e51752c17, type: 2}
+    second: {fileID: 2100000, guid: 5faabae4bdcc6884fb2397f051e1efb8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: TVScreen
-    second: {fileID: 2100000, guid: c67d48af04d9b404599cfddf99d809de, type: 2}
+    second: {fileID: 2100000, guid: e4cbc96a3c8175049af902084fc1f794, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Tapis
-    second: {fileID: 2100000, guid: 4785451ed1353834abae2a884093053a, type: 2}
+    second: {fileID: 2100000, guid: b9dfed373170a42439f0f13f3f45d7f3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -419,11 +429,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: yellow pepper
     second: {fileID: 2100000, guid: 29e1b77d83adb854c828da723644342e, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Image2
-    second: {fileID: 2800000, guid: 319e99da3810ae847af9031b6b13e62e, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -482,7 +487,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15
     secondaryUVHardAngle: 88
     secondaryUVMarginMethod: 0
-    secondaryUVMinLightmapResolution: 100
+    secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 31
     useFileScale: 1
