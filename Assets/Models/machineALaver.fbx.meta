@@ -28,22 +28,22 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Basecolor_0
-    second: {fileID: 2800000, guid: f45fe44f1ebbaff49ae88b50126bfacc, type: 3}
+    second: {fileID: 2800000, guid: b006b1f743a4ec74c9adddad176944b9, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Basecolor_1
-    second: {fileID: 2800000, guid: b318820c5aeabda40a0cf7e22248ec7c, type: 3}
+    second: {fileID: 2800000, guid: 3e0a041dc23ceb94786f038af847e5b5, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Normals_0
-    second: {fileID: 2800000, guid: baa8ce853bc7c264e9473cd253bfd924, type: 3}
+    second: {fileID: 2800000, guid: e60369c8904e80841a2beb2b57ecf10d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Normals_1
-    second: {fileID: 2800000, guid: de86a3b52957c5040a9e355a460b5057, type: 3}
+    second: {fileID: 2800000, guid: 3c4d946d2661eb140b217b0d00f02833, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
