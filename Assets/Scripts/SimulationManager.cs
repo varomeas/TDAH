@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SimulationManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class SimulationManager : MonoBehaviour
     public Lumiere scriptLumiere;
 
 
-    public float tempsRestant = 60f;
+    public float tempsRestant = 10f;
     public bool isTimerRunning = false;
     public TextMeshProUGUI timerDisplay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -70,6 +71,7 @@ public class SimulationManager : MonoBehaviour
     void FinirPartie()
     {
         Debug.Log("C'est la fin des petits poids............................");
-        
+        GameState.targetMenu = MenuState.PostChild;
+        SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
     }
 }
