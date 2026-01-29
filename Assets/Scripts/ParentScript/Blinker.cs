@@ -2,51 +2,61 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Blinker : MonoBehaviour
 {
     public float speed = 10f;
-    public float duration = 2f;
+    public GameObject canvasesToShow;
     /*private Renderer targetRenderer;
     private Color originalColor;*/
     private Outline outline;
-    private bool isBlinking = true;
+    
+    private Coroutine blinkCoroutine;
 
     void Awake()
     {
-        /*targetRenderer = GetComponent<Renderer>();
-        // On mémorise la couleur de base pour pouvoir y revenir
-        if (targetRenderer != null)
+        //targetRenderer = GetComponent<Renderer>();
+        // On mï¿½morise la couleur de base pour pouvoir y revenir
+        /*if (targetRenderer != null)
+            targetRenderer.material.EnableKeyword("_EMISSION");
             originalColor = targetRenderer.material.GetColor("_EmissionColor");*/
+
         outline = GetComponent<Outline>();
     }
+
 
     // C'est cette fonction que tu appelleras pour lancer le clignotement
     public void TriggerBlink()
     {
-        if (!isBlinking) // Évite de relancer si c'est déjà en cours
+        if (blinkCoroutine == null) // Ã©vite de relancer si c'est dÃ©jÃ  en cours
         {
             StartCoroutine(BlinkRoutine());
+            canvasesToShow.SetActive(true);
         }
     }
 
     IEnumerator BlinkRoutine()
     {
-        isBlinking = true;
-        float timer = 0;
 
-        while (timer < duration)
+        while (true)
         {
-            // Ton oscillation préférée entre 0 et 10
-            float value = (Mathf.Sin(Time.time * speed) + 1f) / 2f * 10f;
-            
-            outline.OutlineWidth = value * 10;
-
-            timer += Time.deltaTime;
+            // Ton oscillation prï¿½fï¿½rï¿½e entre 0 et 10
+            float value = (Mathf.Sin(Time.time * speed) + 1f) / 2f;
+            //targetRenderer.material.SetColor("_EmissionColor", Color.white * value);
+            outline.OutlineWidth = value;
             yield return null;
         }
 
-        // Retour à l'état initial
+    }
+
+    public void StopBlink()
+    {
+        StopCoroutine(BlinkRoutine());
+        //if (targetRenderer != null)
+        //    targetRenderer.material.SetColor("_EmissionColor", originalColor);
+        outline.OutlineWidth = 0f;
+        blinkCoroutine = null;
+        canvasesToShow.SetActive(false);
         
-        isBlinking = false;
     }
 }
