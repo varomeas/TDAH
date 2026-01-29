@@ -1,15 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Video;
+using UnityEngine.SceneManagement;
 
 public class ActionManager : MonoBehaviour
 {
 
     [Header("Liste des objets dans l'ordre")]
     public List<Blinker> objectsToBlink;
-    public Light lightToOff;
+    public List<Light> lightToOff;
     public VideoPlayer videoController;
-    public MachineLaver machineLaver;
+    public Animator machineLaver;
     private int currentIndex = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +18,7 @@ public class ActionManager : MonoBehaviour
         if (objectsToBlink.Count > 0)
         {
             objectsToBlink[currentIndex].TriggerBlink();
+            machineLaver.SetBool("Tourne", true);
         }   
     }
 
@@ -28,14 +30,18 @@ public class ActionManager : MonoBehaviour
             switch (objectsToBlink[currentIndex].name)
             {
                 case "Cube.011":
-                    lightToOff.intensity = 0f;
+                    lightToOff[0].intensity = 0f;
+                    lightToOff[1].intensity = 0f;
+                    lightToOff[2].intensity = 0f;
+
                     break;
 
                 case "tvOK":
                     videoController.Stop();
                     break;
                 case "A0043.001":
-                    machineLaver.ActiverPerturbation(false);
+                    machineLaver.SetBool("Tourne", false);
+
                     break;
                 
             }
@@ -49,6 +55,8 @@ public class ActionManager : MonoBehaviour
             else
             {
                 Debug.Log("Tous les objets ont été validés.");
+                GameState.targetMenu = MenuState.End;
+                SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
             }
         }
     }

@@ -7,6 +7,7 @@ public class Blinker : MonoBehaviour
 {
     public float speed = 10f;
     public GameObject canvasesToShow;
+    public AudioSource audioSource;
     /*private Renderer targetRenderer;
     private Color originalColor;*/
     private Outline outline;
@@ -32,6 +33,7 @@ public class Blinker : MonoBehaviour
         {
             StartCoroutine(BlinkRoutine());
             canvasesToShow.SetActive(true);
+            audioSource.Play();
         }
     }
 
@@ -43,7 +45,7 @@ public class Blinker : MonoBehaviour
             // Ton oscillation pr�f�r�e entre 0 et 10
             float value = (Mathf.Sin(Time.time * speed) + 1f) / 2f;
             //targetRenderer.material.SetColor("_EmissionColor", Color.white * value);
-            outline.OutlineWidth = value;
+            outline.OutlineWidth = value*10;
             yield return null;
         }
 
@@ -51,7 +53,7 @@ public class Blinker : MonoBehaviour
 
     public void StopBlink()
     {
-        StopCoroutine(BlinkRoutine());
+        StopAllCoroutines();
         //if (targetRenderer != null)
         //    targetRenderer.material.SetColor("_EmissionColor", originalColor);
         outline.OutlineWidth = 0f;

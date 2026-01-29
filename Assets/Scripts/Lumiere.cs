@@ -27,7 +27,7 @@ public class Lumiere : MonoBehaviour
         isFlashing = true;
         while (isFlashing)
         {
-            lumiereCuisine.intensity = Random.Range(1f, 115f);
+            lumiereCuisine.intensity = Random.Range(1f, 200f);
             yield return new WaitForSeconds(Random.Range(0.05f, 0.2f));
         }
         lumiereCuisine.intensity = intensiteInitiale;

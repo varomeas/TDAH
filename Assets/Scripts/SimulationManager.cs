@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,16 +10,20 @@ public class SimulationManager : MonoBehaviour
     public MachineLaver scriptMachine;
     public Television scriptTelevision;
     public Lumiere scriptLumiere;
+    public List<AudioSource> voixParents;
 
 
     public float tempsRestant = 10f;
     public bool isTimerRunning = false;
     public TextMeshProUGUI timerDisplay;
+
+    private int randomIndex;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         isTimerRunning = true;
         StartCoroutine(SequenceDuRepas());
+        randomIndex = Random.Range(0, voixParents.Count); 
     }
 
     IEnumerator SequenceDuRepas()
@@ -26,14 +32,18 @@ public class SimulationManager : MonoBehaviour
         Debug.Log("Début : l'enfant doit commencer à trier.");
         yield return new WaitForSeconds(20f); //Attendre 10secondes
 
+        voixParents[randomIndex].Play();
+        randomIndex = Random.Range(0, voixParents.Count);
         // Etape 2 - Lumire qui clignote
         scriptLumiere.StartFlashing();
-        yield return new WaitForSeconds(20f); //Attendre 10secondes
 
+        yield return new WaitForSeconds(10f); //Attendre 10secondes
+
+        voixParents[randomIndex].Play();
         // Etape 3 - Télé qui monte en volume + fourchette qui va tomber
         scriptTelevision.StartAudioPic();
         //faire tomber la fourchette
-        yield return new WaitForSeconds(20f); //Attendre 10secondes
+        yield return new WaitForSeconds(10f); //Attendre 10secondes
 
         // Etape 4 - La machine à laver s'emballe
         scriptMachine.ActiverPerturbation(true);
